@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define SERVICE_URL @"http://106.12.22.139:9090/CACWebAPI/api/"
+#define SERVICE_URL @"http://127.0.0.1:9090/CACWebAPI/api/"
 
 #define HTTP_LOGIN @"GetToken"
 #define HTTP_DOWNLOAD @"Document/DownLoadSingleFile"

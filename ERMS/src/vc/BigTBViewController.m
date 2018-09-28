@@ -239,10 +239,14 @@
             NSString * Qualitie =item[@"Qualitie"];
             if ([str hasPrefix:@"'-'"] || [@"0" isEqualToString:Qualitie]) {
                 
-                [charData addObject:[[ChartDataEntry alloc] initWithX:j y: 0]];
+                ChartDataEntry *cd = [[ChartDataEntry alloc] initWithX:j y: 0];
+                [cd setVisible:NO];
+                [charData addObject:cd];
                 
             }else{
-                [charData addObject:[[ChartDataEntry alloc] initWithX:j y:[item[@"ItemValue"] doubleValue] ]];
+                ChartDataEntry *cd = [[ChartDataEntry alloc] initWithX:j y: [item[@"ItemValue"] doubleValue] ];
+                [cd setVisible:YES];
+                [charData addObject:cd];
                 [yValues addObject:item[@"ItemValue"]];
             }
             
@@ -266,6 +270,7 @@
         lineDataSet.axisDependency = AxisDependencyRight;
         [lineDataSet setColor:lineColor];
         [lineDataSet setCircleColor:lineColor];
+        lineDataSet.mode = LineChartModeCubicBezier;
         lineDataSet.lineWidth = 1.0;
         lineDataSet.circleRadius = 3.0;
         lineDataSet.fillAlpha = 65/255.0;
@@ -372,6 +377,7 @@
         [lineDataSet setColor:lineColor];
         [lineDataSet setCircleColor:lineColor];
         lineDataSet.lineWidth = 1.0;
+        lineDataSet.mode = LineChartModeCubicBezier;
         lineDataSet.circleRadius = 3.0;
         lineDataSet.fillAlpha = 65/255.0;
         lineDataSet.fillColor = lineColor;

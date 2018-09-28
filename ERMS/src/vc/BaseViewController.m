@@ -119,12 +119,13 @@
 /*
  http请求
  */
--(void)	httpRequest:(NSMutableDictionary *)param methord:(NSString *)method httpResponsBack:(void (^) (id) ) httpResponsBack{
+-(void)httpRequest:(NSMutableDictionary *)param methord:(NSString *)method httpResponsBack:(void (^) (id) ) httpResponsBack{
     
     NSLog(@"param=%@",param);
     
     NSString *token = [UserDefaultUtil getData:LOGIN_TOKEN];
-
+    
+    
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@?",[UserDefaultUtil getData:URL],method];
     
     NSLog(@"requestUrl==%@",requestUrl);

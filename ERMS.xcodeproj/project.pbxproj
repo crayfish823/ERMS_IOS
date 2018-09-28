@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59097594215E2226006C9E05 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59097593215E2226006C9E05 /* BaiduMapAPI_Map.framework */; };
 		59228E4C21521FAB00492E07 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59228E4B21521FAB00492E07 /* libc++.tbd */; };
 		598698502159EC51005ACB79 /* index@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5986984F2159EC51005ACB79 /* index@2x.png */; };
 		660B1963214A5FA80052305E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660B1962214A5FA80052305E /* SettingViewController.m */; };
@@ -288,6 +289,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59097593215E2226006C9E05 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = ERMS/libs/BaiduMap_IOSSDK_v4/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		59228E4B21521FAB00492E07 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		597B37392151F6CE0005C3E0 /* ERMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ERMS.entitlements; sourceTree = "<group>"; };
 		5986984F2159EC51005ACB79 /* index@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "index@2x.png"; sourceTree = "<group>"; };
@@ -587,7 +589,6 @@
 		669F85FE2114F31000FEE6D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		669F860A2114F37100FEE6D0 /* TTSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSocketManager.m; sourceTree = "<group>"; };
 		669F860B2114F37100FEE6D0 /* TTSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSocketManager.h; sourceTree = "<group>"; };
-		669F860E2114F84600FEE6D0 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Map.framework; path = ../../../../../Downloads/BaiduMap_IOSSDK_v4/BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		669F86132114FF3000FEE6D0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		669F86142114FF3000FEE6D0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		66A46D7A212D0F1300B64B92 /* AddTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTableViewCell.h; sourceTree = "<group>"; };
@@ -702,6 +703,7 @@
 				669F85F32114F2CB00FEE6D0 /* QuartzCore.framework in Frameworks */,
 				6637EEAF212177C300753D8A /* UMCommonLog.framework in Frameworks */,
 				669F85F12114F2C100FEE6D0 /* CoreLocation.framework in Frameworks */,
+				59097594215E2226006C9E05 /* BaiduMapAPI_Map.framework in Frameworks */,
 				669F85EE2114F24800FEE6D0 /* BaiduMapAPI_Base.framework in Frameworks */,
 				669F85ED2114F24800FEE6D0 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				666AF537212977E900CABD5C /* Charts.framework in Frameworks */,
@@ -1185,7 +1187,7 @@
 				9EB11BA621404337008DC23D /* Foundation.framework */,
 				9EB11BA421404319008DC23D /* CoreFoundation.framework */,
 				9EB11BA1214042CD008DC23D /* CFNetwork.framework */,
-				669F860E2114F84600FEE6D0 /* BaiduMapAPI_Map.framework */,
+				59097593215E2226006C9E05 /* BaiduMapAPI_Map.framework */,
 				669F85FE2114F31000FEE6D0 /* CoreTelephony.framework */,
 				669F85FC2114F30600FEE6D0 /* libsqlite3.0.tbd */,
 				669F85FA2114F2FB00FEE6D0 /* Security.framework */,

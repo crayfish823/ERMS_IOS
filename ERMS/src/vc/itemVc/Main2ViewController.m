@@ -1533,8 +1533,8 @@ static NSString *ID5 = @"ViewController5";
         NSString *tagCode = _typeData[i][@"TagCode"];
         NSString *ProjectInfoCode = _typeData[i][@"ProjectInfoCode"];
         NSMutableDictionary *item = [NSMutableDictionary new];
-        [item setObject:[NSString stringWithFormat:@"%@",tagCode] forKey:@"TagCode"];
-        [item setObject:[NSString stringWithFormat:@"%@",ProjectInfoCode] forKey:@"ProjectInfoCode"];
+        [item setValue:[NSString stringWithFormat:@"%@",tagCode] forKey:@"TagCode"];
+        [item setValue:[NSString stringWithFormat:@"%@",ProjectInfoCode] forKey:@"ProjectInfoCode"];
         [codes addObject:item];
     }
     
@@ -1544,10 +1544,10 @@ static NSString *ID5 = @"ViewController5";
     
 
     [param setObject:[TTUtils dateNowToUTC:[NSString stringWithFormat:@"%@ %@",_date,@"00:00:00"] oldSf:@"yyyy-MM-dd HH:mm:ss" nowSf:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"] forKey:@"startTime"];
-    [param setValue:[TTUtils dateNowToUTC:[NSString stringWithFormat:@"%@ %@",_date,@"23:59:59"] oldSf:@"yyyy-MM-dd HH:mm:ss" nowSf:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"] forKey:@"endTime"];
-    [param setValue:@"60" forKey:@"interval"];
+    [param setObject:[TTUtils dateNowToUTC:[NSString stringWithFormat:@"%@ %@",_date,@"23:59:59"] oldSf:@"yyyy-MM-dd HH:mm:ss" nowSf:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"] forKey:@"endTime"];
+    [param setObject:@"60" forKey:@"interval"];
     [param setObject:codes forKey:@"tagList"];
-    NSLog(@"param: %@",param);
+
     [self httpRequest:param methord:HTTP_MAIN2_SEARCH2 httpResponsBack:^(NSDictionary *httpBack) {
         
         [self closePrograssMessage];

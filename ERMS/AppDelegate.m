@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
-#import <UMCommon/UMCommon.h>
 #import "JPUSHService.h"
+#import <UMCommon/UMCommon.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
@@ -140,6 +140,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+}
+-(UIInterfaceOrientationMask)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window{
+    
+       UIDevice*device = [UIDevice currentDevice];
+    
+       if(!_shouldRote|| device.orientation==UIDeviceOrientationPortraitUpsideDown)return UIInterfaceOrientationMaskPortrait;
+    
+       return UIInterfaceOrientationMaskLandscapeRight;
+    
+}
+// 返回是否支持设备自动旋转
+- (BOOL)shouldAutorotate
+{
+    if (_shouldRote ) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {

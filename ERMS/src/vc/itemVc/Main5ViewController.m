@@ -66,7 +66,7 @@ static NSString *ID3 = @"ViewController3";
     self.navigationItem.title = @"报警";
     
     
-    
+
     //初始化数据
     
     
@@ -344,10 +344,10 @@ static NSString *ID3 = @"ViewController3";
     }
     
     
+  
     
     
-    
-    
+   
     
     _dataList = [UITableView new];
     _dataList.tag = 11;
@@ -357,8 +357,8 @@ static NSString *ID3 = @"ViewController3";
     _dataList.rightPos.equalTo(_contentAll.rightPos);
     _dataList.bottomPos.equalTo(_contentAll.bottomPos);
     _dataList.topPos.equalTo(_content.bottomPos);
-    
-    
+
+
     [_contentAll addSubview:_dataList];
     
     _dataList.delegate = self;
@@ -392,10 +392,10 @@ static NSString *ID3 = @"ViewController3";
         
     }];
     // 马上进入刷新状态
-    // [tableView.mj_header beginRefreshing];
+   // [tableView.mj_header beginRefreshing];
     
     
-    
+   
     
     //初始化deviceList
     [self initList];
@@ -578,7 +578,7 @@ static NSString *ID3 = @"ViewController3";
             
             self.btnEndDate.selected = YES;
             [self.btnEndDate setTitle:resultDate forState:UIControlStateSelected];
-            
+       
             self.endDate = [TTUtils dateNowToUTC:[NSString stringWithFormat:@"%@ 23:59:59",resultDate] oldSf:@"yyyy-MM-dd HH:mm:ss" nowSf:@"yyyy-MM-dd"];
         }];
         
@@ -656,7 +656,7 @@ static NSString *ID3 = @"ViewController3";
     
     [param setObject:[UserDefaultUtil getData:USER_ID] forKey:@"UserId"];
     [param setObject:@"-1" forKey:@"IsRead"];
-    
+
     
     [self showPrograssMessage:@"加载"];
     [self httpRequest:param methord:HTTP_BJ httpResponsBack:^(NSDictionary *httpBack) {
@@ -670,7 +670,7 @@ static NSString *ID3 = @"ViewController3";
             self.page++;
             
             [self.data addObjectsFromArray:httpBack[@"Entitys"]];
-            
+           
             [self.dataList reloadData];
         }else{
             [self showMessage:[self httpErrorMessage:httpBack]];
@@ -688,7 +688,7 @@ static NSString *ID3 = @"ViewController3";
 -(void) onKeyBack:(UIView *)view{
     
     _deviceListContent.hidden = YES;
-    
+
     
 }
 
@@ -747,19 +747,19 @@ static NSString *ID3 = @"ViewController3";
         
         return cell;
     }
-    //    if (tableView.tag == 13) {
-    //        //DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    //
-    //        XHTableViewCell *cell = [[XHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID2];
-    //        [cell setData:_xhDatas[indexPath.row]];
-    //
-    //
-    //        return cell;
-    //    }
+//    if (tableView.tag == 13) {
+//        //DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+//        
+//        XHTableViewCell *cell = [[XHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID2];
+//        [cell setData:_xhDatas[indexPath.row]];
+//        
+//        
+//        return cell;
+//    }
     if (tableView.tag == 14) {
         //DeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         XHTableViewCell *cell = [[XHTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID3];
-        
+
         [cell setData:_xhzDatas[indexPath.row] ];
         
         
@@ -771,7 +771,7 @@ static NSString *ID3 = @"ViewController3";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
+
     if (tableView.tag == 12) {
         _projectData = _projectDatas[indexPath.row];
         _btnPro.selected = YES;
@@ -816,7 +816,7 @@ static NSString *ID3 = @"ViewController3";
     
     UITextField *field = (UITextField *)sender;
     
-    
+  
     
 }
 
