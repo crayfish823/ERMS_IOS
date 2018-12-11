@@ -14,6 +14,7 @@
 @interface WelcomeViewController ()
 @property SDCycleScrollView *scrollView;
 @property UIButton *enterBtn;
+
 @end
 
 @implementation WelcomeViewController
@@ -31,12 +32,11 @@
     _scrollView.topPos.equalTo(contentAll.topPos);
     
     _scrollView.bottomPos.equalTo(contentAll.bottomPos);
-    
+    NSString* image1Name=[NSString stringWithFormat:@"welcome1_%@",self.DeviceType];
+    NSString* image2Name=[NSString stringWithFormat:@"welcome2_%@",self.DeviceType];
     NSArray *imagesURLStrings = @[
-                                  @"welcome_1",@"welcome_2"
+                                  image1Name,image2Name
                                   ];
-    
-    
     self.scrollView.localizationImageNamesGroup = imagesURLStrings;
     self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     self.scrollView.delegate = self;
@@ -90,13 +90,13 @@
     }
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

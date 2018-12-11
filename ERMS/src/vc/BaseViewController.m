@@ -65,7 +65,7 @@
         if (![TTUtils isEmpty:content]) {
             MessageDetailViewController *msgVC = [MessageDetailViewController new];
             msgVC.data = [TTUtils stringToJSON:content];
-        [self presentViewController:msgVC animated:YES completion:nil];
+            [self presentViewController:msgVC animated:YES completion:nil];
         }
     }
 }
@@ -90,7 +90,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)showMessage:(NSString *) msg{
-   
+    
     _HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:_HUD];
     _HUD.labelText = msg;
@@ -108,10 +108,10 @@
     }];
 }
 -(void)showPrograssMessage:(NSString *) msg{
-     [MBProgressHUD showMessage:msg];
+    [MBProgressHUD showMessage:msg];
 }
 -(void)closePrograssMessage{
-     [MBProgressHUD hideHUD];
+    [MBProgressHUD hideHUD];
 }
 
 
@@ -172,13 +172,13 @@
     
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

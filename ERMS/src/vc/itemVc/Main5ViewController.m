@@ -418,6 +418,8 @@ static NSString *ID3 = @"ViewController3";
     
     _page = 0;
     _size = 20;
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [JPUSHService resetBadge];
     [self getData];
 }
 

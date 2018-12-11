@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TTSocketManager.h"
+
 @interface BaseViewController : UIViewController
 @property TTSocketManager* socketManage;
 
@@ -24,4 +25,5 @@
 -(NSString*)httpErrorMessage:(NSDictionary *)data;
 -(id)httpGetData:(NSDictionary *)data;
 
+-(NSString*)getDeviceType;
 @end

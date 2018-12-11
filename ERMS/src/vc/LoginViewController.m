@@ -84,7 +84,7 @@ UITextField *fieldPwd,*fieldUser;
     user_image.topPos.equalTo(labTitle.bottomPos).offset(120);
     user_image.leftPos.equalTo(@0).offset(30);
     
-    
+
     fieldUser = [[UITextField alloc] init];
     fieldUser.myWidth = SCREEN_WIDTH - 100;
     fieldUser.myHeight = 30;
@@ -189,8 +189,8 @@ UITextField *fieldPwd,*fieldUser;
     
 
     MyRelativeLayout *settingContent = [MyRelativeLayout new];
-    settingContent.rightPos.equalTo(contentAll.rightPos).offset(5);
-    settingContent.topPos.equalTo(contentAll.topPos).offset(12);
+    settingContent.rightPos.equalTo(contentAll.rightPos).offset(2);
+    settingContent.topPos.equalTo(contentAll.topPos).offset(40);
     settingContent.myWidth = 60;
     settingContent.myHeight = 32;
     settingContent.wrapContentHeight = YES;
@@ -198,13 +198,13 @@ UITextField *fieldPwd,*fieldUser;
     
     UIImageView *settingImage = [UIImageView new];
     settingImage.image = [UIImage imageNamed:@"login_setting_image"];
-    settingImage.leftPos.equalTo(settingContent.leftPos).offset(10);
+    settingImage.leftPos.equalTo(settingContent.leftPos).offset(-5);
     settingImage.centerYPos.equalTo(settingContent.centerYPos);
     settingImage.myHeight = settingImage.myWidth = 20;
     [settingContent addSubview:settingImage];
     
     UILabel *settingLab = [UILabel new];
-    settingLab.leftPos.equalTo(settingImage.rightPos).offset(5);
+    settingLab.leftPos.equalTo(settingImage.rightPos);
     settingLab.rightPos.equalTo(settingContent.rightPos);
     settingLab.centerYPos.equalTo(settingImage.centerYPos);
     settingLab.text = @"设置";
@@ -290,7 +290,8 @@ UITextField *fieldPwd,*fieldUser;
          
             [self presentViewController:mainTab animated:YES completion:nil];
         }else{
-            [self showMessage:[self httpErrorMessage:httpBack]];
+//            [self showMessage:[self httpErrorMessage:httpBack]];
+            [self showMessage:@"登录失败！请检查服务器配置及登录信息是否正确！"];
         }
     }];
 }

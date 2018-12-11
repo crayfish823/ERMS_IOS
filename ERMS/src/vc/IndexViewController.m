@@ -17,6 +17,7 @@
 
 @property NSTimer *timer;
 @property int count;
+@property NSString *DeviceType;
 
 @end
 
@@ -27,8 +28,11 @@
     // Do any additional setup after loading the view.
 
     MyRelativeLayout *contentAll = [MyRelativeLayout new];
+    self.DeviceType= [self getDeviceType];
+    NSLog(@"设备类型：%@",self.DeviceType);
+    NSString* bgName=[NSString stringWithFormat:@"index_%@",self.DeviceType];
     UIImageView *bg = [UIImageView new];
-    bg.image = [UIImage imageNamed:@"index"];
+    bg.image = [UIImage imageNamed:bgName];
     
     bg.leftPos.equalTo(contentAll.leftPos);
     bg.rightPos.equalTo(contentAll.rightPos);
@@ -39,7 +43,6 @@
 
     [contentAll addSubview:bg];
     self.view = contentAll;
-    
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerCount) userInfo:nil repeats:YES];
     [_timer fire];
@@ -64,6 +67,7 @@
         if ([TTUtils isEmpty:[UserDefaultUtil getData:INDEX]]) {
             [UserDefaultUtil saveData:@"index" key:INDEX];
             WelcomeViewController *welcome = [WelcomeViewController new];
+            welcome.DeviceType=self.DeviceType;
             [self presentViewController:welcome animated:YES completion:nil];
         }else{
             
@@ -84,6 +88,48 @@
 }
 */
 
-
+-(NSString*)getDeviceType
+{
+//    if (_IsPad) {
+//        return @"IPAD";
+//    }
+//    else if(_IsPhone4)
+//    {
+//        return @"IPHONE4";
+//    }
+//    else if(_IsPhone5)
+//    {
+//        return @"IPHONE5";
+//    }
+//    else if(_IsPhone6)
+//    {
+//        return @"IPHONE6";
+//    }
+//    else if(_IsPhone6Plus)
+//    {
+//        return @"IPHONE6P";
+//    }
+//    else if(_IsIPHONE_X)
+//    {
+//        return @"IPHONEX";
+//    }
+//    else
+    if(_IsIPHONE_Xr)
+    {
+        return @"IPHONEXR";
+    }
+    else if(_IsIPHONE_Xs)
+    {
+        return @"IPHONEXS";
+    }
+    else if(_IsIPHONE_Xs_Max)
+    {
+        return @"IPHONEXSM";
+    }
+    else
+    {
+        return @"";
+    }
+}
 
 @end

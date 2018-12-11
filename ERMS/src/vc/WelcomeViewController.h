@@ -10,5 +10,5 @@
 #import "BaseViewController.h"
 #import "SDCycleScrollView.h"
 @interface WelcomeViewController : BaseViewController<SDCycleScrollViewDelegate>
-
+@property NSString* DeviceType;
 @end

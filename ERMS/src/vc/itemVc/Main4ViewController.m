@@ -100,11 +100,10 @@ static NSString *ID = @"ViewController";
     // 马上进入刷新状态
     // [tableView.mj_header beginRefreshing];
     
-    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [JPUSHService resetBadge];
     [self initData];
-  
-    
-    
+
 }
 
 
