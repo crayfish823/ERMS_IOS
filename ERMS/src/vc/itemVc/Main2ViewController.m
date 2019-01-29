@@ -21,7 +21,7 @@
 #import "TTUtils.h"
 #import "MenuView.h"
 #import "LeftMenuViewControll.h"
-#import "ERMS-Bridging-Header.h"
+#import "ERMS-Swift.h"
 #import "Main23TableViewCell.h"
 #import "Main24TableViewCell.h"
 #import "MJRefresh.h"
@@ -1184,7 +1184,7 @@ static NSString *ID5 = @"ViewController5";
             if ([str hasPrefix:@"'-'"] || [@"0" isEqualToString:Qualitie]) {
                
                 ChartDataEntry *cd = [[ChartDataEntry alloc] initWithX:j y: 0];
-                [cd setVisible:NO];
+                [cd setVisible:NO];                
                 [charData addObject:cd];
 
             }else{
